@@ -1,67 +1,50 @@
-.header{
-    height: 70px;
-    background-color:white;
+.navbar{
+    background-color: white !important;
+    position: relative;
+    height: fit-content;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    padding:10px 40px;
-    display: flex;
-    justify-content: space-between;
-    font-family: "Mouse Memoirs";
-    font-size: 1.5rem;
-    align-items: center;
-    margin-bottom: 50px;
 }
 
-.header__left{
-    display: flex;
-    justify-self: flex-start;
-    align-items: center;
-    position: relative;
-}
-
-.header__left > a >img {
+.logo{
+    object-fit: contain;
     border-radius: 50%;
-    border: 1px dotted #EF476F ;
-    position: relative;
-    top: 20px;
+    border: 2px dotted #ff97b7;
 }
 
-.header__left > a {
-    color: #EF476F ;
-    margin: 0 20px;
+.navbar-nav > a {
+    color: #ff97b7;
+    font-size: 1.5rem;
+    font-family: 'mouse memoirs';
+    margin-right: 1.3rem;
+}
+
+.header__right > a > svg {
+    height: 50px;
+}
+
+.header__right > a > svg:hover{
+    color:#ef476f ;
+    border-bottom: 1px solid #ef476f;
+}
+
+.login-button{
+    font-family: 'mouse memoirs';
+    font-size: 1.2rem;
+    height: fit-content;
+    padding:0 20px;
+    background-color:#ff97b7 ;
+    border-radius: 20px;
+    color: white;
+    align-self: center;
+}
+
+.login-button:hover{
+    background-color: #ef476f;
+    cursor: pointer;
 }
 
 .header__left > a:hover {
-    color: #06d6a0 ;
-    text-decoration: none;
-}
-
-.header__right{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.header__right > a {
-    display: flex;
     color: #ef476f;
-    padding: 15px;
-}
-
-.header__right > a:hover{
-    color:#06d6a0;
-    cursor: pointer;
-}
-
-.header__rightLoginButton{
-    font-size: 1.5rem;
-    padding:0 20px;
-    border: 1px solid #ef476f;
-    border-radius: 10px;
-    margin-left: 10px;
-}
-
-.header__rightLoginButton:hover{
-    background-color: #ef476f;
-    color: white;
-    cursor: pointer;
+    border-bottom: 1px solid #ef476f;
+    text-decoration: none;
 }
