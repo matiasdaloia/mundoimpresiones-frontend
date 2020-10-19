@@ -1,10 +1,35 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Mundo Impresiones`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:300,400,500,600,700`, // you can also specify font weights and styles
+          "Chilanka",
+          "Amatic SC:400,700",
+          "Quicksand",
+          "Poppins:300,400,500,600,700",
+          "Mouse+Memoirs",
+        ],
+        display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        // The domain name of your Shopify shop.
+        shopName: "mundoimpresiones",
+        // The storefront access token
+        accessToken: "5ce96b8f36cad4b5a91099b82e153b9a",
+        verbose: true,
+        includeCollections: ["shop", "content"],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

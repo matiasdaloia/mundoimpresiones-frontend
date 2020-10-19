@@ -1,0 +1,67 @@
+.header{
+    height: 70px;
+    background-color:white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding:10px 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Mouse Memoirs";
+    font-size: 1.5rem;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.header__left{
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.header__left > a >img {
+    border-radius: 50%;
+    border: 1px dotted #EF476F ;
+    position: relative;
+    top: 20px;
+}
+
+.header__left > a {
+    color: #EF476F ;
+    margin: 0 20px;
+}
+
+.header__left > a:hover {
+    color: #06d6a0 ;
+    text-decoration: none;
+}
+
+.header__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__right > a {
+    display: flex;
+    color: #ef476f;
+    padding: 15px;
+}
+
+.header__right > a:hover{
+    color:#06d6a0;
+    cursor: pointer;
+}
+
+.header__rightLoginButton{
+    font-size: 1.5rem;
+    padding:0 20px;
+    border: 1px solid #ef476f;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.header__rightLoginButton:hover{
+    background-color: #ef476f;
+    color: white;
+    cursor: pointer;
+}
