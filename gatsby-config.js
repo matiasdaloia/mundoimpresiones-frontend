@@ -14,6 +14,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
+        apiKey:
+          "MmM1Njk2MTYtMmYzZC00YWViLTk3OWYtOGI0M2ZkOWJkMjMzNjM3Mzg4MTM1NDI3ODY2MTQ2",
+        autopop: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -23,19 +31,9 @@ module.exports = {
           "Quicksand",
           "Poppins:300,400,500,600,700",
           "Mouse+Memoirs",
+          "Baloo+2:400,500,700",
         ],
         display: "swap",
-      },
-    },
-    {
-      resolve: `gatsby-source-shopify`,
-      options: {
-        // The domain name of your Shopify shop.
-        shopName: "mundoimpresiones",
-        // The storefront access token
-        accessToken: "5ce96b8f36cad4b5a91099b82e153b9a",
-        verbose: true,
-        includeCollections: ["shop", "content"],
       },
     },
     `gatsby-plugin-react-helmet`,

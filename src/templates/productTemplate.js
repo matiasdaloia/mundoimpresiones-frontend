@@ -42,6 +42,18 @@ function ProductTemplate({ data }) {
         }
         style={{ width: "200px" }}
       />
+      <button
+        className="snipcart-add-item"
+        data-item-id={data.allStrapiProductos.edges[0].node.id}
+        data-item-price="80"
+        data-item-url={`/product/${data.allStrapiProductos.edges[0].node.slug}`}
+        data-item-name="curso"
+        data-item-image={
+          data.allStrapiProductos.edges[0].node.imagen.childImageSharp.fluid.src
+        }
+      >
+        COMPRAR
+      </button>
     </Layout>
   )
 }
