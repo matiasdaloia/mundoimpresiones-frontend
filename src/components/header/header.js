@@ -27,16 +27,12 @@ const Header = () => (
         <Link to="/blog">BLOG</Link>
       </Nav>
       <Nav className="ml-auto header__right">
-        <Link external to="https://instagram.com/mundo_imp" target="_blank">
+        <a href="https://instagram.com/mundo_imp" target="_blank">
           <FaInstagram />
-        </Link>
-        <Link
-          external
-          to="https://www.facebook.com/muundoimpresiones"
-          target="_blank"
-        >
+        </a>
+        <a href="https://www.facebook.com/muundoimpresiones" target="_blank">
           <FaFacebook />
-        </Link>
+        </a>
         <div className="login-button">INGRESAR</div>
       </Nav>
     </Navbar.Collapse>

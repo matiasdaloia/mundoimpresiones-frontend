@@ -7,23 +7,19 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__icons">
-        <Link
-          external
-          to="https://facebook.com/muundoimpresiones"
-          target="_blank"
-        >
+        <a href="https://facebook.com/muundoimpresiones" target="_blank">
           <FaFacebookSquare />
-        </Link>
-        <Link external to="https://instagram.com/mundo_imp" target="_blank">
+        </a>
+        <a href="https://instagram.com/mundo_imp" target="_blank">
           <FaInstagram />
-        </Link>
+        </a>
       </div>
       <div className="footer__copyright">
         <p>
           Made with <FaHeart /> by{" "}
-          <Link external target="_blank" to="https://matiasdaloia.com">
+          <a target="_blank" href="https://matiasdaloia.com">
             Matias Daloia{" "}
-          </Link>
+          </a>
           @ {new Date().getFullYear()}
         </p>
       </div>

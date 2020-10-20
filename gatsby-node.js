@@ -3,40 +3,24 @@ const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   // Query for all products in Shopify
-  const result = await graphql(`
-    query {
-      allShopifyProduct(sort: { fields: [title] }) {
+  const { data } = await graphql(`
+    query MyQuery {
+      allStrapiProductos {
         edges {
           node {
-            title
-            images {
-              originalSrc
-            }
-            shopifyId
-            handle
-            description
-            availableForSale
-            priceRange {
-              maxVariantPrice {
-                amount
-              }
-              minVariantPrice {
-                amount
-              }
-            }
+            slug
           }
         }
       }
     }
   `)
-  // Iterate over all products and create a new page using a template
-  // The product "handle" is generated automatically by Shopify
-  result.data.allShopifyProduct.edges.forEach(edge => {
+
+  data.allStrapiProductos.edges.forEach(edge => {
     createPage({
-      path: `/product/${edge.node.handle}`,
-      component: path.resolve(`./src/templates/product.js`),
+      path: `/product/${edge.node.slug}`,
+      component: path.resolve(`./src/templates/productTemplate.js`),
       context: {
-        product: edge.node,
+        slug: edge.node.slug,
       },
     })
   })
