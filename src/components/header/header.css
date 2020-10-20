@@ -25,17 +25,7 @@
 .header__right > a > svg:hover{
     color:#ef476f ;
     border-bottom: 1px solid #ef476f;
-}
-
-.login-button{
-    font-family: 'mouse memoirs';
-    font-size: 1.2rem;
-    height: fit-content;
-    padding:0 20px;
-    background-color:#6fc2b8;
-    border-radius: 20px;
-    color: white;
-    align-self: center;
+    cursor: pointer;
 }
 
 .login-button:hover{
@@ -47,4 +37,6 @@
     color: #ef476f;
     border-bottom: 1px solid #ef476f;
     text-decoration: none;
+    
 }
+

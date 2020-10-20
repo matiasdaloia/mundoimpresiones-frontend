@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { FaPaypal } from "react-icons"
 
 export const query = graphql`
   query($slug: String!) {
@@ -109,14 +108,29 @@ function ProductTemplate({ data }) {
               {data.allStrapiProductos.edges[0].node.categorias.nombre}
             </Categoria>
 
-            <Precio>$25</Precio>
+            <Precio>${data.allStrapiProductos.edges[0].node.precio}</Precio>
 
             <Descripcion>
               {data.allStrapiProductos.edges[0].node.descripcion}
             </Descripcion>
 
             <div>
-              <Button>COMPRAR</Button>
+              <Button
+                className="snipcart-add-item"
+                data-item-id={data.allStrapiProductos.edges[0].node.id}
+                data-item-price={data.allStrapiProductos.edges[0].node.precio}
+                data-item-url={`/product/${data.allStrapiProductos.edges[0].node.slug}`}
+                data-item-description={
+                  data.allStrapiProductos.edges[0].node.descripcion
+                }
+                data-item-image={
+                  data.allStrapiProductos.edges[0].node.imagen.childImageSharp
+                    .fluid.src
+                }
+                data-item-name={data.allStrapiProductos.edges[0].node.titulo}
+              >
+                COMPRAR
+              </Button>
             </div>
           </ProductDetails>
         </Row>
