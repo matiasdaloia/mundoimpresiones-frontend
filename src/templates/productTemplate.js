@@ -32,11 +32,17 @@ export const query = graphql`
 
 const Row = styled.div`
   display: flex;
+
+  & > img {
+    height: 400px;
+  }
+
   @media (max-width: 900px) {
     flex-direction: column;
 
     & > img {
       width: 100%;
+      height: 100%;
     }
   }
 `
@@ -58,32 +64,27 @@ const Categoria = styled.h5`
   border-radius: 20px;
   padding: 2px 5px;
   font-size: 0.8rem;
-  margin-top: 1rem;
 `
 
 const Precio = styled.h4`
-  font-size: 1.5rem;
-  background-color: #ef476f;
-  color: white;
-  border-radius: 10px;
-  padding: 0.5rem;
-  width: fit-content;
+  font-size: 2.5rem;
+  color: black;
+  font-weight: 500;
 `
 
 const Descripcion = styled.p`
   font-size: 1.2rem;
   color: gray;
-  margin-top: 1rem;
 `
 
 const Button = styled.button`
   background-color: #ef476f;
   color: white;
-  border-radius: 10px;
+  border-radius: 30px;
   border: none;
   padding: 0.5rem;
   display: block;
-  width: 100%;
+  width: 50%;
   outline: none;
   margin-top: 1rem;
   :hover {
@@ -101,6 +102,7 @@ function ProductTemplate({ data }) {
               data.allStrapiProductos.edges[0].node.imagen.childImageSharp.fluid
                 .src
             }
+            alt="product_img"
           />
           <ProductDetails>
             <h1>{data.allStrapiProductos.edges[0].node.titulo}</h1>
@@ -129,8 +131,9 @@ function ProductTemplate({ data }) {
                 }
                 data-item-name={data.allStrapiProductos.edges[0].node.titulo}
               >
-                COMPRAR
+                AGREGAR AL CARRITO
               </Button>
+              <Button className="snipcart-checkout">VER CARRITO</Button>
             </div>
           </ProductDetails>
         </Row>

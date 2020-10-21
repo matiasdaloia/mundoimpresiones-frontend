@@ -28,6 +28,14 @@
     cursor: pointer;
 }
 
+.header__right > p{
+    margin: 0 !important;
+}
+
+.header__right{
+    align-items: center;
+}
+
 .login-button:hover{
     background-color: #ef476f;
     cursor: pointer;
@@ -38,5 +46,21 @@
     border-bottom: 1px solid #ef476f;
     text-decoration: none;
     
+}
+
+.snipcart-total-price{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.snipcart-total-price:hover{
+
+}
+
+@media (max-width:900px){
+    .navbar-nav.header__right{
+        display: flex;
+        flex-direction: row;
+    }
 }
 

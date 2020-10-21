@@ -10,7 +10,7 @@ function ProductCard({ titulo, descripcion, precio, categoria, slug, imagen }) {
         <div className="productCard__info">
           <p className="productCard__infoCategory">{categoria}</p>
           <h3>{titulo}</h3>
-          <p className="productCard__description">{descripcion}</p>
+          {/* <p className="productCard__description">{descripcion}</p> */}
           <h4>${precio}</h4>
         </div>
       </div>

@@ -98,7 +98,7 @@ const IndexPage = () => {
                       slug={curso.node.slug}
                       imagen={curso.node.imagen.childImageSharp.fluid.src}
                       precio={curso.node.precio}
-                      descripcion={curso.node.descripcion}
+                      // descripcion={curso.node.descripcion}
                       categoria={curso.node.categorias.nombre}
                     />
                   </ProductCol>

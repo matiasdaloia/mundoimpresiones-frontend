@@ -17,9 +17,6 @@ a:hover{
     color: inherit;
 }
 
-.productCard__description{
-    font-size: 1rem;
-}
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.02); }
@@ -51,6 +48,7 @@ a:hover{
 .productCard__info > h3 {
     font-weight: 700;
     font-size: 1.2rem;
+    margin-top: 0.3rem;
 }
 
 .productCard__info > h4 {

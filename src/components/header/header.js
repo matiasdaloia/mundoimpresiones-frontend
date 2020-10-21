@@ -36,8 +36,9 @@ const Header = () => {
           </a>
           <a className="snipcart-checkout">
             <FaShoppingCart />
+            <span className="snipcart-items-count">0</span>
           </a>
-          <span className="snipcart-total-price">$0.00</span>
+          <a className="snipcart-total-price snipcart-checkout">$0.00</a>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
