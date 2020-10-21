@@ -1,7 +1,6 @@
 .navbar{
     background-color: white !important;
     height: fit-content;
-    margin-bottom: 3rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -21,6 +20,7 @@
 .header__right > a > svg {
     height: 50px;
 }
+
 
 .header__right > a > svg:hover{
     color:#ef476f ;
@@ -50,7 +50,7 @@
 
 .snipcart-total-price{
     cursor: pointer;
-    padding: 10px;
+    
 }
 
 .snipcart-total-price:hover{

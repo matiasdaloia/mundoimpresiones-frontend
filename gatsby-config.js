@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
@@ -18,7 +19,7 @@ module.exports = {
       options: {
         apiKey:
           "MmM1Njk2MTYtMmYzZC00YWViLTk3OWYtOGI0M2ZkOWJkMjMzNjM3Mzg4MTM1NDI3ODY2MTQ2",
-        autopop: true,
+        autopop: false,
       },
     },
     {

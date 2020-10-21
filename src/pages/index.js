@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Container } from "react-bootstrap"
+import { Container, Carousel, CarouselItem } from "react-bootstrap"
 import ProductCard from "../components/productcard/productCard"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
@@ -13,6 +13,14 @@ const Row = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-content: center;
+  }
+`
+
+const CarouselNew = styled(Carousel)`
+  height: 100vh;
+  & > .carousel-control-next > span,
+  .carousel-control-prev > span {
+    padding: 15px;
   }
 `
 
@@ -79,6 +87,36 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <CarouselNew>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1579629611203-6563721561-5ac7a06c558c7223f249b3aadb5494441579629617-1920-1920.jpg?1343622944"
+            alt=""
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1569884086684-8349220848-de36b520670c809f5839f9fb6445fb4d1569884088-1920-1920.jpg?1343622944"
+            alt=""
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1590879059004-3969773085-b9e53a2b51e3b478bf5cbe3a767d12601590879062-1920-1920.jpg?1343622944"
+            alt=""
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1568747659971-5701630724-e5da5d5dfcb52dbf76315b644717b5ba1568747664-1920-1920.jpg?1343622944"
+            alt=""
+          />
+        </Carousel.Item>
+      </CarouselNew>
       <Container>
         <section id="cursos">
           <Title>
