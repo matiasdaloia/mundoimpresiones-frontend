@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Container, Carousel, CarouselItem } from "react-bootstrap"
+import { Container, Carousel } from "react-bootstrap"
 import ProductCard from "../components/productcard/productCard"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"

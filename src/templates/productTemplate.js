@@ -121,7 +121,7 @@ function ProductTemplate({ data }) {
                 className="snipcart-add-item"
                 data-item-id={data.allStrapiProductos.edges[0].node.id}
                 data-item-price={data.allStrapiProductos.edges[0].node.precio}
-                data-item-url={`https://localhost:8001/product/${data.allStrapiProductos.edges[0].node.slug}`}
+                data-item-url={`/product/${data.allStrapiProductos.edges[0].node.slug}`}
                 data-item-description={
                   data.allStrapiProductos.edges[0].node.descripcion
                 }
