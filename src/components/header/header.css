@@ -2,6 +2,11 @@
     background-color: white !important;
     height: fit-content;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    
+}
+
+.navbar-nav{
+    align-items: center;
 }
 
 .logo{
@@ -48,10 +53,42 @@
     
 }
 
+.header__leftSearch{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #6fc2b8;
+    padding-left:1rem;
+}
+
+.header__leftSearch > input {
+    border: none;
+    outline: none;
+    font-size: 0.7rem;
+}
+
+.header__leftSearch > div {
+    background-color: #6fc2b8;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width:900px){
     .navbar-nav.header__right{
         display: flex;
         flex-direction: row;
+    }
+    .navbar-nav{
+        align-items: flex-start;
     }
 }
 
