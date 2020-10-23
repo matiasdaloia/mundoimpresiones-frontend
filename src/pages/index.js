@@ -82,11 +82,11 @@ const Row = styled.div`
 `
 
 const ProductCol = styled.div`
-  width: 28%;
   margin-bottom: 3rem;
+  width: 250px;
 
   @media (max-width: 900px) {
-    width: 400px;
+    width: 250px;
     margin-bottom: 3rem;
     margin: 0 auto;
   }
@@ -117,10 +117,17 @@ const IndexPage = () => {
       allStrapiProductos {
         edges {
           node {
+            categorias {
+              nombre
+            }
+            id
+            titulo
+            precio
+            slug
             imagen {
               childImageSharp {
                 fluid {
-                  srcSet
+                  src
                 }
               }
             }
@@ -140,7 +147,7 @@ const IndexPage = () => {
   const cursos = result.allStrapiProductos.edges
   const categorias = result.allStrapiCategorias.edges
 
-  console.log(categorias)
+  console.log(cursos)
 
   return (
     <Layout>
@@ -184,9 +191,7 @@ const IndexPage = () => {
             alt="hero_img"
           />
         </section>
-      </Container>
-
-      {/* <section id="cursos">
+        <section id="cursos">
           <Title>
             Cursos <TitleSpan>Online</TitleSpan>
           </Title>
@@ -204,11 +209,12 @@ const IndexPage = () => {
                       slug={curso.node.slug}
                       imagen={curso.node.imagen.childImageSharp.fluid.src}
                       precio={curso.node.precio}
-                      // descripcion={curso.node.descripcion}
                       categoria={curso.node.categorias.nombre}
                     />
                   </ProductCol>
                 )
+              } else {
+                return null
               }
             })}
           </Row>
@@ -232,15 +238,17 @@ const IndexPage = () => {
                       slug={curso.node.slug}
                       imagen={curso.node.imagen.childImageSharp.fluid.src}
                       precio={curso.node.precio}
-                      descripcion={curso.node.descripcion}
                       categoria={curso.node.categorias.nombre}
                     />
                   </ProductCol>
                 )
+              } else {
+                return null
               }
             })}
           </Row>
-        </section> */}
+        </section>
+      </Container>
     </Layout>
   )
 }

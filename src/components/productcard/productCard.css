@@ -1,10 +1,6 @@
 .productCard{
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    border-radius: 0.9rem;
-    font-size: 1rem;
-    
 }
 
 a{
@@ -26,14 +22,14 @@ a:hover{
 }
 
 .productCard > img {
-    width: 100%;
+    width: 250px;
+    height: 250px;
     object-fit: contain;
-    border-top-left-radius: 0.9rem;
-    border-top-right-radius: 0.9rem;
 }
 
 .productCard__info {
-    padding: 1rem;
+    padding-top: 1rem;
+    
 }
 
 .productCard__infoCategory{
@@ -43,18 +39,14 @@ a:hover{
     padding: 0 0.5rem;
     color: white;
     font-size: 0.8rem;
+    margin-bottom: 0.5rem;
 } 
 
-.productCard__info > h3 {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 0.3rem;
-}
-
-.productCard__info > h4 {
-    font-weight: 700;
-    color: #FF98B7;
-    font-size: 1.2rem;
+.productCard__infoCategoryPrecio {
+    font-weight: 600;
+    color: black;
+    font-family: "Poppins";
+    margin-top: 0.5rem;
 }
 
 
