@@ -51,39 +51,36 @@ const Row = styled.div`
 `
 
 const ProductDetails = styled.div`
-  padding-left: 1rem;
+  padding-left: 2rem;
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-family: "Poppins";
+
+  & > h1 {
+    font-size: 22px;
+  }
 
   @media (max-width: 900px) {
     padding: 0;
   }
 `
 
-const Categoria = styled.h5`
-  background-color: #6fc2b8;
-  color: white;
-  width: fit-content;
-  border-radius: 20px;
-  padding: 2px 5px;
-  font-size: 0.8rem;
-`
-
 const Precio = styled.h4`
-  font-size: 2.5rem;
-  color: black;
+  font-size: 26px;
+  color: #f8d4db;
   font-weight: 500;
 `
 
 const Descripcion = styled.p`
-  font-size: 1.2rem;
-  color: gray;
+  font-size: 13px;
+  color: #838383;
+  line-height: 24px;
 `
 
 const Button = styled.button`
-  background-color: #ef476f;
-  color: white;
+  background-color: #c9e8dd;
+  color: black;
   border-radius: 30px;
   border: none;
   padding: 0.5rem;
@@ -139,9 +136,6 @@ function ProductTemplate({ data }) {
 
           <ProductDetails>
             <h1>{data.allStrapiProductos.edges[0].node.titulo}</h1>
-            <Categoria>
-              {data.allStrapiProductos.edges[0].node.categorias.nombre}
-            </Categoria>
 
             <Precio>${data.allStrapiProductos.edges[0].node.precio}</Precio>
 
@@ -171,7 +165,6 @@ function ProductTemplate({ data }) {
           </ProductDetails>
         </Row>
       </Container>
-      */
     </Layout>
   )
 }
