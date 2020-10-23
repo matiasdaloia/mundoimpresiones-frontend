@@ -1,9 +1,56 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Container, Carousel } from "react-bootstrap"
+import { Carousel } from "react-bootstrap"
 import ProductCard from "../components/productcard/productCard"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
+import { FaArrowRight } from "react-icons/fa"
+
+const Hero = styled.div`
+  display: flex;
+  flex: 1;
+`
+
+const Container = styled.div`
+  padding: 0 4%;
+`
+
+const Sidebar = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 0.2;
+  border-radius: 20px;
+  overflow: hidden;
+  height: fit-content;
+
+  & a {
+    display: flex;
+    background-color: #c9e8dd;
+    color: black;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    border-bottom: 1px solid lightgray;
+  }
+  & a:hover {
+    background-color: #f8d4db;
+    color: red;
+  }
+
+  & a > svg {
+    color: gray;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+`
+
+const HeroSlide = styled(Carousel)`
+  display: flex;
+  flex: 0.8;
+  background-color: green;
+  margin-left: 1rem;
+`
 
 const Row = styled.div`
   display: flex;
@@ -13,14 +60,6 @@ const Row = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     align-content: center;
-  }
-`
-
-const CarouselNew = styled(Carousel)`
-  height: 100vh;
-  & > .carousel-control-next > span,
-  .carousel-control-prev > span {
-    padding: 15px;
   }
 `
 
@@ -56,25 +95,24 @@ const TitleSpan = styled.span`
 
 const IndexPage = () => {
   const result = useStaticQuery(graphql`
-    query {
+    query MyQuery {
       allStrapiProductos {
         edges {
           node {
-            id
-            slug
-            titulo
-            precio
-            descripcion
-            categorias {
-              nombre
-            }
             imagen {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid
+                  srcSet
                 }
               }
             }
+          }
+        }
+      }
+      allStrapiCategorias {
+        edges {
+          node {
+            nombre
           }
         }
       }
@@ -82,43 +120,51 @@ const IndexPage = () => {
   `)
 
   const cursos = result.allStrapiProductos.edges
+  const categorias = result.allStrapiCategorias.edges
 
-  // console.log(cursos[0].node.categorias.nombre)
+  console.log(categorias)
 
   return (
     <Layout>
-      <CarouselNew>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1579629611203-6563721561-5ac7a06c558c7223f249b3aadb5494441579629617-1920-1920.jpg?1343622944"
-            alt=""
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1569884086684-8349220848-de36b520670c809f5839f9fb6445fb4d1569884088-1920-1920.jpg?1343622944"
-            alt=""
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1590879059004-3969773085-b9e53a2b51e3b478bf5cbe3a767d12601590879062-1920-1920.jpg?1343622944"
-            alt=""
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1568747659971-5701630724-e5da5d5dfcb52dbf76315b644717b5ba1568747664-1920-1920.jpg?1343622944"
-            alt=""
-          />
-        </Carousel.Item>
-      </CarouselNew>
       <Container>
-        <section id="cursos">
+        <section id="categorias">
+          <Hero>
+            <Sidebar>
+              {categorias.map(categoria => (
+                <a>
+                  <FaArrowRight />
+                  {categoria.node.nombre}
+                </a>
+              ))}
+            </Sidebar>
+            <HeroSlide>
+              <Carousel.Item>
+                <img
+                  src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1579629611203-6563721561-5ac7a06c558c7223f249b3aadb5494441579629617-1920-1920.jpg?1343622944"
+                  alt="hero_img"
+                  className="d-block w-100"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1569884086684-8349220848-de36b520670c809f5839f9fb6445fb4d1569884088-1920-1920.jpg?1343622944"
+                  alt="hero_img"
+                  className="d-block w-100"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1590879059004-3969773085-b9e53a2b51e3b478bf5cbe3a767d12601590879062-1920-1920.jpg?1343622944"
+                  alt="hero_img"
+                  className="d-block w-100"
+                />
+              </Carousel.Item>
+            </HeroSlide>
+          </Hero>
+        </section>
+      </Container>
+
+      {/* <section id="cursos">
           <Title>
             Cursos <TitleSpan>Online</TitleSpan>
           </Title>
@@ -172,8 +218,7 @@ const IndexPage = () => {
               }
             })}
           </Row>
-        </section>
-      </Container>
+        </section> */}
     </Layout>
   )
 }

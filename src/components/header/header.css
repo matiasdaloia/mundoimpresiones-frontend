@@ -2,7 +2,7 @@
     background-color: white !important;
     height: fit-content;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    
+    margin-bottom: 1rem;
 }
 
 .navbar-nav{
@@ -47,8 +47,8 @@
 }
 
 .header__left > a:hover {
-    color: #ef476f;
-    border-bottom: 1px solid #ef476f;
+    color: #F8D4DB;
+    border-bottom: 1px solid #F8D4DB;
     text-decoration: none;
     
 }
@@ -58,7 +58,7 @@
     justify-content: space-between;
     align-items:center;
     background-color: white;
-    width: 300px;
+    width: 500px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid #6fc2b8;
@@ -89,6 +89,9 @@
     }
     .navbar-nav{
         align-items: flex-start;
+    }
+    .header__leftSearch{
+        width: 100%;
     }
 }
 
