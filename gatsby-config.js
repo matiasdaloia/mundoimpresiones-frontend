@@ -1,16 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `Mundo Impresiones`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Los mejores kits imprimibles y Cursos Online para armar tu fiesta!`,
+    author: `@matidaloia`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://protected-basin-11310.herokuapp.com/`,
-        queryLimit: 1000, // Default to 100
+        apiURL: `https://protected-basin-11310.herokuapp.com`,
+        queryLimit: 1000,
         contentTypes: [`categorias`, `productos`, `personajes`],
       },
     },

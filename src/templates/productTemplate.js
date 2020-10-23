@@ -19,7 +19,7 @@ export const query = graphql`
           descripcion
           imagen {
             childImageSharp {
-              fluid(maxWidth: 1200) {
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -102,7 +102,7 @@ function ProductTemplate({ data }) {
               data.allStrapiProductos.edges[0].node.imagen.childImageSharp.fluid
                 .src
             }
-            alt="product_img"
+            alt={data.allStrapiProductos.edges[0].node.titulo}
           />
           <ProductDetails>
             <h1>{data.allStrapiProductos.edges[0].node.titulo}</h1>

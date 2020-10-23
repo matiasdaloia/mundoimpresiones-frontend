@@ -56,7 +56,7 @@ const TitleSpan = styled.span`
 
 const IndexPage = () => {
   const result = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allStrapiProductos {
         edges {
           node {
@@ -71,7 +71,7 @@ const IndexPage = () => {
             imagen {
               childImageSharp {
                 fluid {
-                  src
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -83,7 +83,7 @@ const IndexPage = () => {
 
   const cursos = result.allStrapiProductos.edges
 
-  console.log(cursos)
+  // console.log(cursos[0].node.categorias.nombre)
 
   return (
     <Layout>

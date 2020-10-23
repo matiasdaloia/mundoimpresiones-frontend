@@ -1,13 +1,13 @@
 import React from "react"
 import "./header.css"
-import { FaInstagram, FaFacebook, FaShoppingCart } from "react-icons/fa"
+import { FaInstagram, FaFacebook } from "react-icons/fa"
 import { Link } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import { Navbar, Nav } from "react-bootstrap"
 
 const Header = () => {
   return (
-    <Navbar className="sticky-top" expand="lg">
+    <Navbar expand="lg">
       <Navbar.Brand>
         <Link to="/">
           <img
@@ -34,11 +34,6 @@ const Header = () => {
           <a href="https://www.facebook.com/muundoimpresiones" target="_blank">
             <FaFacebook />
           </a>
-          <a className="snipcart-checkout">
-            <FaShoppingCart />
-          </a>
-          <a className="snipcart-total-price snipcart-checkout">$0.00</a>
-          <a className="snipcart-items-count">0</a>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

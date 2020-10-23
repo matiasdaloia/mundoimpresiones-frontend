@@ -48,15 +48,6 @@
     
 }
 
-.snipcart-total-price{
-    cursor: pointer;
-    
-}
-
-.snipcart-total-price:hover{
-
-}
-
 @media (max-width:900px){
     .navbar-nav.header__right{
         display: flex;
