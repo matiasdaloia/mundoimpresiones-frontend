@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from "react-bootstrap"
+import { Container, Carousel } from "react-bootstrap"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
@@ -20,9 +20,12 @@ export const query = graphql`
           imagen {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid
+                src
               }
             }
+          }
+          imagenesadicionales {
+            url
           }
         }
       }
@@ -32,7 +35,7 @@ export const query = graphql`
 
 const Row = styled.div`
   display: flex;
-
+  flex: 1;
   & > img {
     height: 400px;
   }
@@ -51,6 +54,7 @@ const ProductDetails = styled.div`
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   @media (max-width: 900px) {
     padding: 0;
@@ -97,13 +101,42 @@ function ProductTemplate({ data }) {
     <Layout>
       <Container>
         <Row>
-          <img
-            src={
-              data.allStrapiProductos.edges[0].node.imagen.childImageSharp.fluid
-                .src
-            }
-            alt={data.allStrapiProductos.edges[0].node.titulo}
-          />
+          <Carousel>
+            <Carousel.Item style={{ flex: "0.5" }}>
+              <img
+                src={
+                  data.allStrapiProductos.edges[0].node.imagen.childImageSharp
+                    .fluid.src
+                }
+                alt={data.allStrapiProductos.edges[0].node.titulo}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[0].url}`}
+                alt={data.allStrapiProductos.edges[0].node.titulo}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[1].url}`}
+                alt={data.allStrapiProductos.edges[0].node.titulo}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[2].url}`}
+                alt={data.allStrapiProductos.edges[0].node.titulo}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[3].url}`}
+                alt={data.allStrapiProductos.edges[0].node.titulo}
+              />
+            </Carousel.Item>
+          </Carousel>
+
           <ProductDetails>
             <h1>{data.allStrapiProductos.edges[0].node.titulo}</h1>
             <Categoria>
@@ -138,6 +171,7 @@ function ProductTemplate({ data }) {
           </ProductDetails>
         </Row>
       </Container>
+      */
     </Layout>
   )
 }

@@ -156,7 +156,7 @@ const IndexPage = () => {
           <Hero>
             <Sidebar>
               {categorias.map(categoria => (
-                <a>
+                <a href="#">
                   <FaArrowRight />
                   {categoria.node.nombre}
                 </a>

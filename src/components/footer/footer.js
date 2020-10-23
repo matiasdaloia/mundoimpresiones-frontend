@@ -1,7 +1,6 @@
 import React from "react"
 import "./footer.css"
 import { FaInstagram, FaFacebookSquare, FaHeart } from "react-icons/fa"
-import { Link } from "gatsby"
 
 function Footer() {
   return (
