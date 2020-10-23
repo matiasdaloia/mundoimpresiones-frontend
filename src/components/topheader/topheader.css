@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem;
+    /* font-family: "poppins",sans-serif; */
 }
 
 .topHeader__left{
@@ -42,6 +43,14 @@
 .topHeader__right > svg {
     font-size: 14px;
     color: #A88F94;
+}
+
+.topHeader__left > p:hover{
+    color: #E1372F;
+}
+
+.topHeader__right > p:hover{
+    color: #E1372F;
 }
 
 

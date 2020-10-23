@@ -9,6 +9,10 @@ import { FaArrowRight } from "react-icons/fa"
 const Hero = styled.div`
   display: flex;
   flex: 1;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const Container = styled.div`
@@ -21,21 +25,18 @@ const Sidebar = styled.div`
   flex: 0.2;
   border-radius: 20px;
   overflow: hidden;
-  height: fit-content;
+  height: 100%;
 
   & a {
     display: flex;
     background-color: #c9e8dd;
-    color: black;
     align-items: center;
     padding: 1rem;
     cursor: pointer;
-    font-weight: 700;
     border-bottom: 1px solid lightgray;
   }
   & a:hover {
     background-color: #f8d4db;
-    color: red;
   }
 
   & a > svg {
@@ -43,13 +44,30 @@ const Sidebar = styled.div`
     font-size: 0.8rem;
     margin-right: 1rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const HeroSlide = styled(Carousel)`
   display: flex;
   flex: 0.8;
-  background-color: green;
   margin-left: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+const ImgPhone = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+  }
 `
 
 const Row = styled.div`
@@ -161,6 +179,10 @@ const IndexPage = () => {
               </Carousel.Item>
             </HeroSlide>
           </Hero>
+          <ImgPhone
+            src="https://d26lpennugtm8s.cloudfront.net/stores/255/678/themes/new_linkedman/slide-1579629611203-6563721561-5ac7a06c558c7223f249b3aadb5494441579629617-1920-1920.jpg?1343622944"
+            alt="hero_img"
+          />
         </section>
       </Container>
 

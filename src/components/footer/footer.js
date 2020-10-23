@@ -18,9 +18,9 @@ function Footer() {
         <p>
           Made with <FaHeart /> by{" "}
           <a target="_blank" href="https://matiasdaloia.com">
-            Matias Daloia{" "}
+            Matias Daloia
           </a>
-          @ {new Date().getFullYear()}
+          {""} @ {new Date().getFullYear()}
         </p>
       </div>
     </div>

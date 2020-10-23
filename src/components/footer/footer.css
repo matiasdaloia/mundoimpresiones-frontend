@@ -1,6 +1,6 @@
 .footer{
     height: fit-content;
-    background-color:#FF97B7;
+    background-color:#F8D4DB;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -34,7 +34,7 @@
 }
 
 .footer__copyright > p > a {
-    color: white;
+    text-decoration-line: underline;
 }
 
 .footer__copyright > p > svg {
