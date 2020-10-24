@@ -8,8 +8,8 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        // apiURL: `https://protected-basin-11310.herokuapp.com`,
-        apiURL: `http://localhost:1337`,
+        apiURL: `https://protected-basin-11310.herokuapp.com`,
+        // apiURL: `http://localhost:1337`,
         queryLimit: 1000,
         contentTypes: [`categorias`, `productos`, `personajes`],
       },
