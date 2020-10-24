@@ -63,6 +63,7 @@ const ProductDetails = styled.div`
 
   @media (max-width: 900px) {
     padding: 0;
+    margin-top: 20px;
   }
 `
 
