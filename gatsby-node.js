@@ -2,7 +2,7 @@ const path = require("path")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  // Query for all products in Shopify
+  // Query for all products in Strapi
   const { data } = await graphql(`
     query MyQuery {
       allStrapiProductos {

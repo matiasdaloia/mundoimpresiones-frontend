@@ -36,6 +36,7 @@ export const query = graphql`
 const Row = styled.div`
   display: flex;
   flex: 1;
+  margin-bottom: 3rem;
   & > img {
     height: 400px;
   }
@@ -95,12 +96,13 @@ const Button = styled.button`
 `
 
 function ProductTemplate({ data }) {
+  console.log(data.allStrapiProductos.edges[0].node.imagenesadicionales[1].url)
   return (
     <Layout>
       <Container>
         <Row>
-          <Carousel>
-            <Carousel.Item style={{ flex: "0.5" }}>
+          <Carousel style={{ flex: "0.5" }}>
+            <Carousel.Item>
               <img
                 src={
                   data.allStrapiProductos.edges[0].node.imagen.childImageSharp
@@ -111,25 +113,37 @@ function ProductTemplate({ data }) {
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[0].url}`}
+                src={
+                  data.allStrapiProductos.edges[0].node.imagenesadicionales[0]
+                    .url
+                }
                 alt={data.allStrapiProductos.edges[0].node.titulo}
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[1].url}`}
+                src={
+                  data.allStrapiProductos.edges[0].node.imagenesadicionales[1]
+                    .url
+                }
                 alt={data.allStrapiProductos.edges[0].node.titulo}
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[2].url}`}
+                src={
+                  data.allStrapiProductos.edges[0].node.imagenesadicionales[2]
+                    .url
+                }
                 alt={data.allStrapiProductos.edges[0].node.titulo}
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src={`https://protected-basin-11310.herokuapp.com${data.allStrapiProductos.edges[0].node.imagenesadicionales[3].url}`}
+                src={
+                  data.allStrapiProductos.edges[0].node.imagenesadicionales[3]
+                    .url
+                }
                 alt={data.allStrapiProductos.edges[0].node.titulo}
               />
             </Carousel.Item>
@@ -165,6 +179,7 @@ function ProductTemplate({ data }) {
             </div>
           </ProductDetails>
         </Row>
+        <Row>HOLA</Row>
       </Container>
     </Layout>
   )
