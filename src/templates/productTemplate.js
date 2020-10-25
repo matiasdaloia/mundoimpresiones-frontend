@@ -116,6 +116,37 @@ const ButtonDescripcionLarga = styled.div`
   margin-bottom: 1rem;
 `
 
+const Comentarios = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 5rem;
+  background-color: #c9e8dd;
+  font-family: "Poppins";
+
+  & > h1 {
+    font-size: 2rem;
+    width: fit-content;
+    border-bottom: 2px dotted white;
+    padding-bottom: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  & > button {
+    margin-top: 1rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+  }
+  & > button:hover {
+    background-color: #f8d4db;
+  }
+`
+
 function ProductTemplate({ data }) {
   return (
     <Layout>
@@ -206,10 +237,14 @@ function ProductTemplate({ data }) {
             />
           </DescripcionLarga>
         </section>
-        <section id="productos-relacionados">
-          <Row>{}</Row>
-        </section>
       </Container>
+      <section id="comentarios">
+        <Comentarios>
+          <h1>¿Tenes alguna duda?</h1>
+          <p>Te escuchamos</p>
+          <button>Escribinos</button>
+        </Comentarios>
+      </section>
     </Layout>
   )
 }
