@@ -2,6 +2,7 @@ import React from "react"
 import { Container, Carousel } from "react-bootstrap"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import ReactMarkdown from "react-markdown"
 import styled from "styled-components"
 
 export const query = graphql`
@@ -17,6 +18,7 @@ export const query = graphql`
             nombre
           }
           descripcion
+          descripcionlarga
           imagen {
             childImageSharp {
               fluid {
@@ -87,7 +89,7 @@ const Button = styled.button`
   border: none;
   padding: 0.5rem;
   display: block;
-  width: 50%;
+  width: 200px;
   outline: none;
   margin-top: 1rem;
   :hover {
@@ -95,8 +97,26 @@ const Button = styled.button`
   }
 `
 
+const DescripcionLarga = styled.div`
+  height: fit-content;
+  background-color: #f2f2f2;
+  padding: 2rem;
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-size: 13px;
+`
+
+const ButtonDescripcionLarga = styled.div`
+  width: fit-content;
+  padding: 0.8rem;
+  background-color: #c9e8dd;
+  border-radius: 40px;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`
+
 function ProductTemplate({ data }) {
-  console.log(data.allStrapiProductos.edges[0].node.imagenesadicionales[1].url)
   return (
     <Layout>
       <Container>
@@ -175,11 +195,20 @@ function ProductTemplate({ data }) {
               >
                 AGREGAR AL CARRITO
               </Button>
-              <Button className="snipcart-checkout">VER CARRITO</Button>
             </div>
           </ProductDetails>
         </Row>
-        <Row>HOLA</Row>
+        <section id="descripcionlarga">
+          <ButtonDescripcionLarga>Descripción</ButtonDescripcionLarga>
+          <DescripcionLarga>
+            <ReactMarkdown
+              source={data.allStrapiProductos.edges[0].node.descripcionlarga}
+            />
+          </DescripcionLarga>
+        </section>
+        <section id="productos-relacionados">
+          <Row>{}</Row>
+        </section>
       </Container>
     </Layout>
   )

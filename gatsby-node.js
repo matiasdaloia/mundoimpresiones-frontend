@@ -9,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             slug
+            categorias {
+              nombre
+            }
           }
         }
       }
@@ -21,6 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/productTemplate.js`),
       context: {
         slug: edge.node.slug,
+        categoria: edge.node.categorias.nombre,
       },
     })
   })
